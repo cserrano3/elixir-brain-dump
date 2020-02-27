@@ -11,11 +11,12 @@ defmodule Identicon do
     %Identicon.Image{ hex: hexList } = imageStruct
     IO.inspect(hexList)
     hexList
-    |> Enum.chunk_every(3, 3)
+    |> Enum.chunk_every(3, 3, :discard)
     |> Enum.map(&mirrorRow/1) #defines reference to mirrorRow function with arity of one.
   end
 
   def mirrorRow(hexRow) do
+    IO.inspect(hexRow)
 #    Identicon.main("ohh sweet love")
 #     HexGrid
 #    [
